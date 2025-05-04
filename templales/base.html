@@ -1,11 +1,24 @@
-{% extends "base.html" %} {% block head %} {% endblock %} {% block body %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Bucket List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css"
+    />
 
-<div class="content">
-  <h1>Edit Your Task</h1>
-  <form action="/edit/{{task.id}}" method="POST">
-    <input type="text" name="content" id="content" value="{{task.content}}" />
-    <input type="submit" value="Edit" class="btn_input" />
-  </form>
-</div>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css')}}"
+    />
+    {% block head %} {% endblock %}
 
-{% endblock%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+  </head>
+  <body>
+    {% block body %} {% endblock %}
+  </body>
+</html>
